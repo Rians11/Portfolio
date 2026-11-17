@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of ANDRIAMPARANY Rianala Joan, BSc Software Engineering student from Madagascar, studying in Mauritius.">
+  <title>ANDRIAMPARANY Rianala Joan | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3271AD;
+      --primary-dark: #255A8C;
+      --dark: #141C2E;
+      --text: #273043;
+      --body: #33405C;
+      --light: #F4F7FB;
+      --teal: #3271AD;
+      --pink: #4F86E0;
+      --border: #DCE3EE;
+      --wrap: 1140px;
+      --serif: "Roboto", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Roboto", Arial, sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3, h4 { color: var(--dark); margin: 0; line-height: 1.15; font-family: var(--serif); font-weight: 700; }
+    p { margin: 0; }
+    :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+    section { scroll-margin-top: 80px; }
+    .section { padding: 110px 0; }
+    .section-light { background: var(--light); }
+    .kicker { font-weight: 500; color: var(--dark); margin-bottom: 14px; }
+    .section-title { font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 700; }
+
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 4px; font: inherit; font-weight: 500; text-decoration: none; cursor: pointer; border: 1.5px solid transparent; transition: background .15s, color .15s; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline { border-color: var(--primary); color: var(--primary); background: #fff; }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .btn-pink { background: var(--primary); color: #fff; }
+    .btn-pink:hover { background: var(--primary-dark); }
+
+    /* Header */
+    .header { position: sticky; top: 0; z-index: 20; background: #3271AD; }
+    .header .logo, .header .nav a { color: #fff; }
+    .header .nav a:hover, .header .nav a.active { color: #D6E4F5; text-decoration: underline; text-underline-offset: 6px; }
+    .header .logo-mark { background: #fff; color: #3271AD; }
+    .header .btn-outline { background: transparent; border-color: #fff; color: #fff; }
+    .header .btn-outline:hover { background: #fff; color: #3271AD; }
+    .header .menu-btn { color: #fff; }
+    .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.35rem; color: var(--dark); text-decoration: none; }
+    .logo { font-family: var(--serif); font-weight: 700; }
+    .logo-dot { color: var(--pink); margin-left: -10px; }
+    .logo-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--primary); color: #fff; display: grid; place-items: center; font-size: 1rem; }
+    .nav { display: flex; gap: 40px; }
+    .nav a { text-decoration: none; color: var(--dark); }
+    .nav a:hover, .nav a.active { color: var(--primary); }
+    .menu-btn { display: none; background: none; border: 0; font: inherit; font-weight: 500; color: var(--dark); cursor: pointer; padding: 8px; }
+
+    /* Hero */
+    .hero { background: var(--light); padding: 100px 0 120px; overflow: hidden; }
+    .hero .wrap { display: grid; grid-template-columns: 1.25fr 1fr; gap: 70px; align-items: center; }
+    .hero-visual { position: relative; padding: 30px 0 30px 30px; }
+    .hero-panel { position: absolute; inset: 0 40px 0 0; background: #CFDCEE; border-radius: 40px; }
+    .spark { position: absolute; color: var(--pink); z-index: 2; }
+    .spark.solid { color: var(--primary); }
+    .id-card { position: relative; z-index: 1; background: #fff; border-radius: 8px; padding: 34px 32px; box-shadow: 0 14px 40px rgba(20,28,46,.12); }
+    .id-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; margin-bottom: 24px; }
+    .id-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--dark); line-height: 1.2; margin-bottom: 22px; }
+    .id-card dl { margin: 0; }
+    .id-card dl div { padding: 12px 0; border-top: 1px solid var(--border); }
+    .id-card dt { font-size: .85rem; color: var(--body); }
+    .id-card dd { margin: 0; font-weight: 700; color: var(--dark); }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 22px; }
+    .hero h1 span { color: var(--primary); }
+    .hero-text p { color: var(--body); font-size: 1.15rem; max-width: 34rem; margin-bottom: 40px; }
+
+    .hero-visual { position: relative; height: 480px; }
+    .hero-panel { position: absolute; left: 0; right: 0; bottom: 0; height: 78%; border-radius: 40px; background: #CFDEEA; }
+    .hero-photo { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 72%; height: 100%; display: flex; align-items: flex-end; justify-content: center; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 0 0 40px 40px; }
+    .initials { width: 260px; height: 260px; margin-bottom: 70px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 6rem; font-weight: 700; display: grid; place-items: center; }
+    .spark { position: absolute; color: var(--primary); }
+    .spark.teal { color: #6CC4B5; }
+    .spark.blue { color: #59A8E8; }
+
+    /* Blue band (hero + intro) */
+    .band { background: #3271AD; color: #fff; }
+    .band h1 { color: #fff; }
+    #home { padding: 110px 0 90px; }
+    .statement { display: grid; grid-template-columns: 300px 1fr; gap: 70px; align-items: center; }
+    .arch { position: relative; width: 280px; aspect-ratio: 4 / 5; border-radius: 18px; display: grid; place-items: center; }
+    .arch::before { content: ""; position: absolute; inset: 0; transform: translate(18px, 18px); border: 2px solid #fff; border-radius: 18px; z-index: 0; }
+    .arch::after { content: ""; position: absolute; inset: 0; background: #4F87BE; border-radius: 18px; z-index: 0; }
+    .arch img, .arch .arch-initials { position: relative; z-index: 1; }
+    .arch img { position: absolute; inset: 0; }
+    .arch img { border-radius: 18px; }
+    .statement .arch { isolation: isolate; }
+    .arch img { width: 100%; height: 100%; object-fit: cover; }
+    .arch-initials { font-family: "EB Garamond", Georgia, serif; font-size: 6rem; color: #fff; }
+    .statement h1 { font-size: clamp(2rem, 4.2vw, 3.4rem); font-weight: 700; line-height: 1.22; letter-spacing: -0.01em; margin-bottom: 36px; }
+    .btn-light { background: #fff; color: #3271AD; }
+    .btn-light:hover { background: #DCE7F7; }
+
+    .band-intro { padding: 30px 0 120px; scroll-margin-top: 84px; }
+    .intro { display: grid; grid-template-columns: 1fr 1.5fr; gap: 70px; }
+    .intro-label { display: flex; align-items: center; gap: 24px; justify-content: flex-end; align-self: start; font-family: "EB Garamond", Georgia, serif; font-weight: 500; font-size: 1.2rem; padding-top: 10px; color: #fff; }
+    .intro-label span { width: 160px; height: 1px; background: #fff; }
+    .intro-text p { font-family: "EB Garamond", Georgia, serif; font-size: 1.4rem; line-height: 1.75; color: #fff; margin-bottom: 26px; }
+    .band .facts { border-top-color: rgba(255,255,255,.4); margin-top: 10px; }
+    .band .facts div { border-bottom-color: rgba(255,255,255,.4); }
+    .band .facts dt { color: #fff; }
+    .band .facts dd { color: #E3EDF8; }
+
+    /* Clear separation between sections: alternating backgrounds + divider line */
+    .section, .quote { border-top: 1px solid var(--border); }
+    #skills, #experience, .quote { background: var(--light); }
+    #portfolio, #education, #contact { background: #fff; }
+    #skills .skill-card { background: #fff; }
+    .section .wrap > .section-title { position: relative; padding-bottom: 22px; }
+    .section .wrap > .section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 64px; height: 4px; border-radius: 2px; background: var(--primary); }
+    .contact .wrap > .section-title::after { left: 50%; transform: translateX(-50%); }
+
+    /* Quote */
+    .quote { padding: 120px 0; text-align: center; }
+    .quote blockquote { margin: 0; }
+    .quote p { font-size: clamp(2rem, 4.5vw, 3.6rem); font-weight: 700; line-height: 1.2; color: #3271AD; max-width: 22ch; margin: 0 auto 30px; }
+    .quote cite { font-family: "EB Garamond", Georgia, serif; font-style: normal; font-size: 1.5rem; color: #3271AD; }
+
+    /* Expertise */
+    .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; margin-top: 90px; }
+    .skill-card { background: var(--light); padding: 30px 28px 34px; border-bottom: 3px solid transparent; border-radius: 4px; transition: border-color .2s; }
+    .skill-card:hover, .skill-card.active { border-bottom-color: var(--primary); }
+    .icon-box { width: 72px; height: 72px; background: #fff; border-radius: 6px; display: grid; place-items: center; box-shadow: 0 2px 8px rgba(20,28,46,.05); margin-bottom: 26px; color: var(--primary); }
+    .skill-card h3 { font-size: 1.35rem; margin-bottom: 12px; }
+    .skill-card p { color: var(--body); }
+
+    /* About */
+    .about .wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+    .about-head { position: sticky; top: 120px; }
+    .about-visual { position: relative; display: grid; place-items: center; min-height: 460px; }
+    .about-visual svg.blob { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .about-photo { position: relative; width: 70%; aspect-ratio: 4 / 5; display: grid; place-items: center; }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+    .about-photo .initials { margin: 0; background: #fff; color: var(--primary); }
+    .about-text .section-title { margin-bottom: 30px; }
+    .about-text p { color: var(--body); font-size: 1.1rem; margin-bottom: 24px; }
+
+    /* Portfolio */
+    .portfolio-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 38px; margin-top: 90px; }
+    .project-card { background: #fff; box-shadow: 0 6px 24px rgba(20,28,46,.08); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+    .project-card .body { padding: 30px; display: flex; flex-direction: column; flex: 1; }
+    .project-card h3 { font-size: 1.6rem; margin-bottom: 14px; }
+    .project-card p { color: var(--body); font-size: 1.05rem; margin-bottom: 26px; flex: 1; }
+    .project-card .tech { font-size: .9rem; color: var(--teal); font-weight: 500; margin-bottom: 18px; flex: 0; }
+    .link-arrow { align-self: flex-start; display: inline-flex; gap: 10px; align-items: center; font-weight: 500; color: var(--dark); text-decoration: none; padding-bottom: 10px; border-bottom: 1px solid var(--dark); }
+    a.link-arrow:hover { color: var(--primary); border-color: var(--primary); }
+
+    /* Mini UI illustrations */
+    .shot { height: 250px; padding: 22px; display: flex; align-items: center; justify-content: center; }
+    .shot-1 { background: #9DB6DE; }
+    .shot-2 { background: #D6E2F3; }
+    .shot-3 { background: #DADFE7; }
+    .mock { width: 100%; height: 100%; background: #fff; border-radius: 8px; box-shadow: 0 10px 30px rgba(31,34,51,.18); padding: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 10px; color: var(--dark); overflow: hidden; }
+    .shot-2 .mock { transform: none; }
+    .mock-bar { display: flex; gap: 5px; align-items: center; }
+    .mock-bar i { width: 7px; height: 7px; border-radius: 50%; background: #E3E3EA; }
+    .mock-bar b { margin-left: 8px; font-weight: 700; font-size: 11px; }
+    .cal { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; flex: 1; }
+    .cal span { background: #F0EEFD; border-radius: 3px; }
+    .cal span.on { background: var(--primary); }
+    .cal span.wa { background: #25D366; }
+    .steps { display: flex; gap: 6px; }
+    .steps span { flex: 1; height: 6px; border-radius: 3px; background: #E3E1F5; }
+    .steps span.on { background: var(--primary); }
+    .field { height: 18px; border: 1px solid #DCD8F5; border-radius: 3px; }
+    .field.short { width: 55%; }
+    .mini-btn { align-self: flex-end; width: 60px; height: 18px; border-radius: 3px; background: var(--primary); }
+    .tabs { display: flex; gap: 4px; }
+    .tabs span { padding: 3px 8px; border-radius: 3px 3px 0 0; background: #EEF0F4; }
+    .tabs span.on { background: var(--primary); color: #fff; }
+    .row { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 6px; }
+    .row span { height: 12px; background: #EEF0F4; border-radius: 2px; }
+    .row.head span { background: #C9CDD6; }
+
+    .race { height: 16px; background: #F0EEFD; border-radius: 3px; }
+    .race span { display: block; height: 100%; background: var(--primary); border-radius: 3px; }
+    .race:first-of-type span { background: #25D366; }
+    .mock.code p { font-family: "Courier New", monospace; font-size: 10px; margin: 0; color: #444; }
+    .mock.code em { font-style: normal; color: var(--primary); font-weight: 700; }
+
+    .project-card .mock p { margin: 0; flex: 0; font-size: inherit; color: inherit; }
+    .mock.jazz { background: #1C1A2E; color: #F3E3B5; gap: 6px; }
+    .mock.jazz .mock-bar b { color: #F3E3B5; }
+    .mock.jazz .mock-bar i { background: #3A3754; }
+    .project-card .mock .jazz-place { font-size: 9px; letter-spacing: .5px; color: #B8A97C; margin-top: 10px !important; }
+    .project-card .mock .jazz-name { font-family: Georgia, serif; font-size: 26px; line-height: 1.05; color: #F3E3B5; }
+    .project-card .mock .jazz-tags { font-size: 10px; color: #D8C48A; }
+    .jazz-btn { width: 90px; height: 18px; border: 1px solid #D8C48A; border-radius: 9px; }
+    .field.search { display: flex; align-items: center; padding: 0 8px; color: #8A8AA0; font-size: 9px; height: 22px; }
+    .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .tiles span { background: var(--primary); color: #fff; border-radius: 4px; padding: 14px 4px; text-align: center; font-weight: 700; font-size: 9px; }
+
+    .cards-2.projects { margin-top: 90px; }
+    .project-card .body .link-arrow + .link-arrow { margin-top: 14px; }
+    .shot-2 { background: #111; }
+    .mock.mg { background: #000; color: #fff; justify-content: space-between; box-shadow: none; }
+    .project-card .mock .mg-title { font-size: 20px; letter-spacing: 6px; color: #bbb; }
+    .mg-title span { color: #fff; }
+    .mg-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .mg-tiles span { height: 110px; display: flex; align-items: flex-end; padding: 8px; font-size: 12px; font-weight: 700;
+      background: linear-gradient(180deg, #333, #111); border-top: 2px solid #fff; color: #eee; }
+
+    /* Experience */
+    .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 38px; }
+    .cards-2.exp { margin-top: 80px; }
+    .exp-card { border: 1.5px solid var(--primary); border-radius: 4px; padding: 36px 34px; background: #fff; }
+    .exp-date { color: var(--teal); font-weight: 700; margin-bottom: 16px; }
+    .exp-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+    .exp-place { color: var(--dark); margin-bottom: 18px; font-weight: 500; }
+    .exp-card p { color: var(--body); }
+
+    .facts { margin: 8px 0 0; border-top: 1px solid var(--border); }
+    .facts div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .facts dt { font-weight: 700; color: var(--dark); }
+    .facts dd { margin: 0; color: var(--body); }
+
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 70px; }
+    .edu-title { font-size: 1.5rem; margin-bottom: 26px; }
+    .timeline { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 2px solid var(--primary); }
+    .timeline li { position: relative; padding-bottom: 30px; }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li::before { content: ""; position: absolute; left: -34px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--primary); }
+    .timeline .exp-date { margin-bottom: 4px; }
+    .timeline h4 { margin: 0 0 4px; font-size: 1.15rem; color: var(--dark); }
+    .timeline p { color: var(--body); }
+
+    /* Contact */
+    .contact { text-align: center; }
+    .contact .lead { color: var(--body); font-size: 1.15rem; margin-top: 22px; }
+    .contact-info { list-style: none; padding: 0; margin: 50px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 40px; }
+    .contact-info li { display: flex; align-items: center; gap: 10px; color: var(--dark); }
+    .contact-info svg { color: var(--primary); flex-shrink: 0; }
+    .contact-info a { text-decoration: none; }
+    .contact-info a:hover { color: var(--primary); }
+    form { max-width: 768px; margin: 60px auto 0; text-align: left; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px; }
+    .form-group { margin-bottom: 24px; }
+    label { display: block; margin-bottom: 10px; color: var(--dark); }
+    input, select, textarea { width: 100%; font: inherit; color: var(--dark); padding: 14px; border: 1px solid var(--primary); border-radius: 4px; background: #fff; }
+    input:focus, select:focus, textarea:focus { border-color: var(--primary); outline: 2px solid var(--primary); outline-offset: 0; }
+    textarea { min-height: 180px; resize: vertical; }
+    .check { display: flex; align-items: center; gap: 10px; font-size: .95rem; margin-bottom: 30px; }
+    .check input { width: 18px; height: 18px; padding: 0; }
+    .check label { margin: 0; }
+    .form-actions { text-align: center; }
+    .form-actions .btn { padding: 16px 46px; }
+    .form-msg { text-align: center; margin-top: 18px; min-height: 1.6em; color: var(--teal); font-weight: 500; }
+    .form-msg.error { color: #C42B3B; }
+
+    /* Footer */
+    .footer { background: #98B5DA; padding: 60px 0 40px; }
+    .footer-name { text-align: center; font-size: 1.8rem; font-weight: 700; color: #fff; margin: 0 0 50px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; padding-bottom: 60px; border-bottom: 1px solid #9AA1AE; }
+    .footer-nav { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-nav a { text-decoration: none; color: var(--dark); font-size: 1.05rem; }
+    .footer-nav a:hover { color: var(--primary); }
+    .socials { display: flex; gap: 18px; }
+    .socials a { color: var(--dark); display: grid; place-items: center; }
+    .socials a:hover { color: var(--primary); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 40px; color: var(--dark); }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .cards-4 { grid-template-columns: repeat(2, 1fr); }
+      .cards-3 { grid-template-columns: 1fr; max-width: 560px; }
+    }
+    @media (max-width: 820px) {
+      .menu-btn { display: block; }
+      .nav { display: none; position: absolute; top: 84px; left: 0; right: 0; flex-direction: column; gap: 0; background: #fff; padding: 10px 24px 20px; box-shadow: 0 10px 20px rgba(31,34,51,.08); }
+      .nav.open { display: flex; }
+      .nav a { padding: 12px 0; }
+      .header .btn-outline { display: none; }
+      .hero { padding: 60px 0 80px; }
+      .hero .wrap, .about .wrap { grid-template-columns: 1fr; }
+      .about-head { position: static; }
+      #home { padding: 60px 0 50px; }
+      .statement, .intro { grid-template-columns: 1fr; gap: 36px; }
+      .arch { width: 220px; margin-right: 18px; }
+      .intro-label { justify-content: flex-start; }
+      .intro-label span { width: 60px; }
+      .intro-text p { font-size: 1.2rem; }
+      .hero-visual { padding: 20px 0 20px 16px; }
+      .hero-panel { right: 16px; border-radius: 28px; }
+      .hero-visual { height: 380px; }
+      .about .wrap { gap: 40px; }
+      .about-visual { min-height: 360px; }
+      .section { padding: 80px 0; }
+      .grid-2, .edu-grid, .cards-2 { grid-template-columns: 1fr; }
+      .facts div { grid-template-columns: 1fr; gap: 2px; }
+    }
+    @media (max-width: 560px) {
+      .cards-4 { grid-template-columns: 1fr; }
+      .initials { width: 200px; height: 200px; font-size: 4.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <a class="logo" href="#home">Rianala Joan</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#home" class="active">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About me</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </nav>
+      <a class="btn btn-outline" href="#contact">Contact Me</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="band" id="home">
+      <div class="wrap">
+        <div class="statement">
+          <div class="arch">
+            <img src="photo.jpg" alt="Portrait of ANDRIAMPARANY Rianala Joan" onerror="this.outerHTML='<span class=&quot;arch-initials&quot;>RJ</span>'">
+          </div>
+          <div>
+            <h1>Software Engineering student at UTM, from Mahajanga, Madagascar, passionate about technology, music and sport.</h1>
+            <a class="btn btn-light" href="#contact">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-intro" id="about">
+      <div class="wrap intro">
+        <p class="intro-label"><span></span>Intro</p>
+        <div class="intro-text">
+          <p>
+            I was born and raised in Mahajanga, on the north-west coast of Madagascar. In April 2025 I moved to Mauritius to study for a
+            BSc (Hons) in Software Engineering at the University of Technology, Mauritius.
+            Starting over in a new country taught me to adapt quickly and to take on challenges
+            that first look out of reach.
+          </p>
+          <p>
+            My studies cover the full path of a software project: object-oriented programming
+            and algorithms in Java, relational databases with Oracle, web applications with
+            ASP.NET and mobile development with Kotlin. Alongside my courses I took part in the
+            development of an Odoo system for a music school, and in a 24-hour web development
+            hackathon at Middlesex University Mauritius.
+          </p>
+          <p>
+            Outside the classroom I play piano, drums and guitar with the KLP Band, and I enjoy
+            football, basketball and volleyball.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <p class="kicker">My Skills</p>
+        <h2 class="section-title">My Expertise</h2>
+
+        <div class="cards-4">
+          <article class="skill-card active">
+            <div class="icon-box">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg>
+            </div>
+            <h3>Java Programming</h3>
+            <p>My main language at university. I use it to practise object-oriented design, data structures and algorithms, and to build desktop interfaces with Swing.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="icon-box">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            </div>
+            <h3>Databases</h3>
+            <p>Designing relational schemas, writing queries that answer real questions, and adding logic on the database side with PL/SQL.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="icon-box">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>Building pages that work on every screen with HTML, CSS and JavaScript, and server-side applications with ASP.NET.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="icon-box">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            </div>
+            <h3>Mobile Apps</h3>
+            <p>Creating Android applications in Kotlin with Jetpack Compose, a field I am currently exploring through my coursework.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+
+
+    <!-- Portfolio -->
+    <section class="section" id="portfolio">
+      <div class="wrap">
+        <div class="portfolio-head">
+          <div>
+            <p class="kicker">Recent Projects</p>
+            <h2 class="section-title">My Portfolio</h2>
+          </div>
+          <a class="btn btn-pink" href="https://github.com/Rians11" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+            Visit My GitHub
+          </a>
+        </div>
+
+        <div class="cards-2 projects">
+          <article class="project-card">
+            <div class="shot shot-1" aria-hidden="true">
+              <div class="mock jazz">
+                <div class="mock-bar"><i></i><i></i><i></i><b>N · B</b></div>
+                <p class="jazz-place">Rose Hill · Mauritius</p>
+                <p class="jazz-name">Nadine<br>Bellombre</p>
+                <p class="jazz-tags">Jazz · Soul · Séga · Reggae</p>
+                <div class="jazz-btn"></div>
+              </div>
+            </div>
+            <div class="body">
+              <h3>Singer Portfolio</h3>
+              <p>A multi-page website for Nadine Bellombre, a jazz and soul singer based in Mauritius who also performs in France. It presents her biography, career, music and press, a photo gallery and a booking form, with a French and English version.</p>
+              <p class="tech">HTML · CSS · JavaScript</p>
+              <a class="link-arrow" href="https://github.com/Rians11/Final_Project_Portfolio" target="_blank" rel="noopener">View on GitHub
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="shot shot-2" aria-hidden="true">
+              <div class="mock mg">
+                <p class="mg-title"><span>MALAGASY</span> MUSIC</p>
+                <div class="mg-tiles"><span>Artists</span><span>Instruments</span><span>Genres</span></div>
+              </div>
+            </div>
+            <div class="body">
+              <h3>Malagasy Music</h3>
+              <p>A website that celebrates the musical heritage of Madagascar, my home country. Visitors can explore artists, traditional instruments and genres, search across the whole site and filter artists by genre.</p>
+              <p class="tech">HTML · CSS · JavaScript</p>
+              <a class="link-arrow" href="https://github.com/Rians11/MALAGASY-MUSIC" target="_blank" rel="noopener">View on GitHub
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+              </a>
+              <a class="link-arrow" href="https://rians11.github.io/MALAGASY-MUSIC/" target="_blank" rel="noopener">View live site
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-light" id="experience">
+      <div class="wrap">
+        <p class="kicker">Beyond the classroom</p>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="cards-2 exp">
+          <article class="exp-card">
+            <p class="exp-date">2026</p>
+            <h3>Odoo Development</h3>
+            <p class="exp-place">KLP Studio, Mauritius</p>
+            <p>Took part in developing the Odoo system that runs a music school: lesson scheduling,
+              automatic WhatsApp reminders for parents and teachers, and monthly payment reports
+              for teachers. I also helped deploy and maintain it on a Linux server.</p>
+          </article>
+
+          <article class="exp-card">
+            <p class="exp-date">Alongside my studies</p>
+            <h3>Musician</h3>
+            <p class="exp-place">KLP Band, Mauritius</p>
+            <p>Rehearse and perform with the band. Making music as a group
+              has taught me the same things a good software team needs: listening, timing and
+              reliability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <div class="wrap">
+        <p class="kicker">Qualifications</p>
+        <h2 class="section-title">Education &amp; Certificates</h2>
+
+        <div class="edu-grid">
+          <div>
+            <h3 class="edu-title">Education</h3>
+            <ol class="timeline">
+              <li>
+                <p class="exp-date">2025 – 2028 (expected)</p>
+                <h4>BSc (Hons) Software Engineering</h4>
+                <p>University of Technology, Mauritius (UTM)</p>
+              </li>
+              <li>
+                <p class="exp-date">2022</p>
+                <h4>Baccalaureate</h4>
+                <p>Lycée Monfort Saint Gabriel, Mahajanga, Madagascar</p>
+              </li>
+            </ol>
+          </div>
+          <div>
+            <h3 class="edu-title">Certificates</h3>
+            <ol class="timeline">
+              <li>
+                <p class="exp-date">August 2025</p>
+                <h4>IEEEmdxthon 2025, 24-Hour Web Development Hackathon</h4>
+                <p>Certificate of participation, 4th edition, Middlesex University Mauritius</p>
+              </li>
+              <li>
+                <p class="exp-date">2024</p>
+                <h4>DELF B2 (French)</h4>
+                <p>Alliance française, Mahajanga, Madagascar</p>
+              </li>
+              <li>
+                <p class="exp-date">2024</p>
+                <h4>Certificate of Advanced English (TESOL/TEFL)</h4>
+                <p>ITTI School, Mahajanga, Madagascar</p>
+              </li>
+              <li>
+                <p class="exp-date">2024</p>
+                <h4>Certificate of Completion in Office IT Training</h4>
+                <p>Lycée Monfort Saint Gabriel, Mahajanga, Madagascar</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote" aria-label="Quote">
+      <div class="wrap">
+        <blockquote>
+          <p>"It always seems impossible until it's done."</p>
+          <cite>Nelson Mandela</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <p class="kicker">Get In Touch</p>
+        <h2 class="section-title">Contact me</h2>
+        <p class="lead">For a question about my work, a project or an internship opportunity, I would be glad to hear from you.</p>
+
+        <ul class="contact-info">
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:+23057552925">+230 5755 2925</a>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            <a href="mailto:rianalaandriamparany11@gmail.com">rianalaandriamparany11@gmail.com</a>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>O'Seeth Residence, Sodnac / Ibis Avenue, Quatre Bornes, Mauritius</span>
+          </li>
+        </ul>
+
+        <form id="contactForm" novalidate>
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">Choose a topic</label>
+            <select id="topic" name="topic" required>
+              <option value="">Select one...</option>
+              <option>Project</option>
+              <option>Website</option>
+              <option>Internship opportunity</option><option>Academic collaboration</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
+          </div>
+
+          <div class="check">
+            <input id="terms" type="checkbox" required>
+            <label for="terms">I accept the terms</label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-name">ANDRIAMPARANY Rianala Joan</p>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="logo" href="#home">Rianala Joan</a>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#home">Home</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#about">About me</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="socials">
+          <a href="https://github.com/Rians11" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+          <a href="tel:+23057552925" aria-label="Phone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </a>
+          <a href="mailto:rianalaandriamparany11@gmail.com" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Designed and built by ANDRIAMPARANY Rianala Joan</p>
+        <p>&copy; <span id="year"></span> All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+    menuBtn.addEventListener("click", function () {
+      const open = nav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open);
+    });
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Highlight the active menu link while scrolling
+    const navLinks = nav.querySelectorAll("a");
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (link) {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll("section[id]").forEach(function (s) { observer.observe(s); });
+
+    // Expertise cards: underline the one being hovered or tapped
+    const skillCards = document.querySelectorAll(".skill-card");
+    skillCards.forEach(function (card) {
+      card.addEventListener("mouseenter", function () {
+        skillCards.forEach(function (c) { c.classList.toggle("active", c === card); });
+      });
+    });
+
+    // Contact form: validate, then open the visitor's email app with the message
+    const form = document.getElementById("contactForm");
+    const msg = document.getElementById("formMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = {
+        first: form.firstName.value.trim(),
+        last: form.lastName.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        topic: form.topic.value,
+        message: form.message.value.trim()
+      };
+
+      msg.classList.add("error");
+      if (!data.first || !data.last) { msg.textContent = "Enter your first and last name."; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { msg.textContent = "Enter a valid email address."; return; }
+      if (!data.topic) { msg.textContent = "Choose a topic."; return; }
+      if (!data.message) { msg.textContent = "Write a message."; return; }
+      if (!form.terms.checked) { msg.textContent = "Accept the terms to send your message."; return; }
+
+      const subject = data.topic + " - " + data.first + " " + data.last;
+      const body = data.message + "\n\n" + data.first + " " + data.last + "\n" + data.email + (data.phone ? "\n" + data.phone : "");
+      window.location.href = "mailto:rianalaandriamparany11@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+      msg.classList.remove("error");
+      msg.textContent = "Your email app is opening with the message ready to send.";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
