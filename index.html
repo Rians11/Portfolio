@@ -266,6 +266,8 @@
     .check input { width: 18px; height: 18px; padding: 0; }
     .check label { margin: 0; }
     .form-actions { text-align: center; }
+    .cv-actions { margin-top: 50px; text-align: center; }
+    .cv-actions .btn { padding: 16px 40px; }
     .form-actions .btn { padding: 16px 46px; }
     .form-msg { text-align: center; margin-top: 18px; min-height: 1.6em; color: var(--teal); font-weight: 500; }
     .form-msg.error { color: #C42B3B; }
@@ -514,7 +516,7 @@
                 <p>University of Technology, Mauritius (UTM)</p>
               </li>
               <li>
-                <p class="exp-date">2022</p>
+                <p class="exp-date">2024</p>
                 <h4>Baccalaureate</h4>
                 <p>Lycée Monfort Saint Gabriel, Mahajanga, Madagascar</p>
               </li>
@@ -579,57 +581,21 @@
             <a href="https://www.linkedin.com/in/rianala-joan-andriamparany-b79b48366/" target="_blank" rel="noopener">LinkedIn</a>
           </li>
           <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+            <a href="https://github.com/Rians11" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <li>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>O'Seeth Residence, Sodnac / Ibis Avenue, Quatre Bornes, Mauritius</span>
+            <span>Quatre Bornes, Mauritius</span>
           </li>
         </ul>
 
-        <form id="contactForm" novalidate>
-          <div class="grid-2">
-            <div class="form-group">
-              <label for="firstName">First name</label>
-              <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last name</label>
-              <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone number</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="topic">Choose a topic</label>
-            <select id="topic" name="topic" required>
-              <option value="">Select one...</option>
-              <option>Project</option>
-              <option>Website</option>
-              <option>Internship opportunity</option><option>Academic collaboration</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
-          </div>
-
-          <div class="check">
-            <input id="terms" type="checkbox" required>
-            <label for="terms">I accept the terms</label>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Submit</button>
-          </div>
-          <p class="form-msg" id="formMsg" role="status"></p>
-        </form>
+        <div class="cv-actions">
+          <a class="btn btn-primary" href="CV_ANDRIAMPARANY_Rianala_Joan.pdf" download>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Download my CV
+          </a>
+        </div>
       </div>
     </section>
 
@@ -709,36 +675,6 @@
       });
     });
 
-    // Contact form: validate, then open the visitor's email app with the message
-    const form = document.getElementById("contactForm");
-    const msg = document.getElementById("formMsg");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const data = {
-        first: form.firstName.value.trim(),
-        last: form.lastName.value.trim(),
-        email: form.email.value.trim(),
-        phone: form.phone.value.trim(),
-        topic: form.topic.value,
-        message: form.message.value.trim()
-      };
-
-      msg.classList.add("error");
-      if (!data.first || !data.last) { msg.textContent = "Enter your first and last name."; return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { msg.textContent = "Enter a valid email address."; return; }
-      if (!data.topic) { msg.textContent = "Choose a topic."; return; }
-      if (!data.message) { msg.textContent = "Write a message."; return; }
-      if (!form.terms.checked) { msg.textContent = "Accept the terms to send your message."; return; }
-
-      const subject = data.topic + " - " + data.first + " " + data.last;
-      const body = data.message + "\n\n" + data.first + " " + data.last + "\n" + data.email + (data.phone ? "\n" + data.phone : "");
-      window.location.href = "mailto:rianalaandriamparany11@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-      msg.classList.remove("error");
-      msg.textContent = "Your email app is opening with the message ready to send.";
-      form.reset();
-    });
   </script>
 </body>
 </html>
